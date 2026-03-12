@@ -717,3 +717,123 @@ h6 {
         font-size: 2.2rem;
     }
 }
+
+/* --- PROJECTS REDESIGN --- */
+.tech-pill-sm {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background-color: var(--bg-dark-2);
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.tech-pill-sm.more {
+    color: var(--text-light);
+}
+
+.tech-pill-modal {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: var(--bg-dark-2);
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tech-pill-modal:hover {
+    background-color: rgba(100, 255, 218, 0.08);
+    transform: translateY(-2px);
+}
+
+.view-details-link {
+    transition: all 0.3s ease;
+}
+.view-details-link:hover {
+    color: #fff !important;
+}
+
+.custom-bullets {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.custom-bullets li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+.custom-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.challenge-card {
+    border-left: 3px solid var(--primary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    background-color: rgba(100, 255, 218, 0.03) !important;
+    transform: translateX(5px);
+}
+
+#plutoModal .modal-content {
+    box-shadow: 0 15px 40px -10px rgba(2, 12, 27, 0.9);
+}
+
+.custom-carousel .carousel-inner {
+    aspect-ratio: 16 / 9;
+    background-color: #0b1120; /* Darker navy background for contrast */
+}
+
+.custom-carousel .carousel-item {
+    height: 100%;
+}
+
+.custom-carousel .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.custom-carousel .carousel-item img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    z-index: 10;
+}
+
+/* Adjust Carousel for Mobile to make images larger and remove padding */
+@media (max-width: 767.98px) {
+    .custom-carousel {
+        aspect-ratio: auto; /* Remove strict 16:9 to let it be taller if needed */
+        min-height: 250px; /* Base height for mobile */
+        border-radius: 0 !important; /* Remove rounded corners to use full width */
+        margin-left: -1.5rem; /* Pull out of modal padding */
+        margin-right: -1.5rem;
+        border-left: none !important;
+        border-right: none !important;
+    }
+    
+    .custom-carousel .carousel-item img {
+        object-fit: cover; /* Fill the space more aggressively on small screens */
+    }
+}
+
+.line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
