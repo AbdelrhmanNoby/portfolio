@@ -837,3 +837,349 @@ h6 {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* Optimize navbar spacing on small desktop / tablet screens to prevent wrapping */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .nav-link {
+        margin-left: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px; /* Positioned directly above the scroll-to-top button */
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #25D366; /* Official WhatsApp green */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Sync display state with the scroll-to-top button */
+.scroll-to-top.active ~ .whatsapp-float {
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-float:hover {
+    background-color: #fff;
+    color: #25D366;
+    transform: translateY(-3px);
+}
+
+/* --- LIGHT MODE STYLES --- */
+body.light-theme {
+    --bg-dark: #f8fafc;
+    --bg-dark-1: #ffffff;
+    --bg-dark-2: #f1f5f9;
+    --text-light: #1e293b;
+    --text-slate: #475569; /* Darker slate for better readability */
+    --primary-color: #0f766e; /* Rich dark teal for better accessibility and contrast */
+}
+
+/* Global text-white override to dark color in light theme */
+body.light-theme .text-white:not(.btn):not(.badge):not(.nav-link) {
+    color: #0f172a !important;
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6 {
+    color: #0f172a;
+}
+
+body.light-theme .bg-dark-2 {
+    background-color: #f1f5f9 !important;
+}
+
+body.light-theme .navbar {
+    background-color: transparent !important;
+    border-bottom: 1px solid transparent;
+}
+
+body.light-theme .navbar.scrolled,
+body.light-theme .navbar.mobile-open {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .navbar-brand {
+    color: #0f172a !important;
+}
+
+body.light-theme .nav-link {
+    color: #334155 !important;
+}
+
+body.light-theme .nav-link:hover,
+body.light-theme .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Fix navbar collapse background only on mobile */
+@media (max-width: 991px) {
+    body.light-theme .navbar-collapse {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+}
+@media (min-width: 992px) {
+    body.light-theme .navbar-collapse {
+        background-color: transparent !important;
+        border: none !important;
+    }
+}
+
+body.light-theme #themeToggle {
+    color: #475569 !important;
+}
+
+body.light-theme #themeToggle:hover {
+    color: var(--primary-color) !important;
+}
+
+body.light-theme .btn-primary {
+    color: #ffffff !important;
+}
+
+body.light-theme .btn-primary:hover {
+    background-color: #14b8a6 !important;
+    color: #ffffff !important;
+}
+
+body.light-theme .btn-outline-light {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #334155 !important;
+}
+
+body.light-theme .btn-outline-light:hover {
+    background-color: #f8fafc !important;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+body.light-theme .availability-pill {
+    background: rgba(15, 118, 110, 0.05) !important;
+    border: 1px solid rgba(15, 118, 110, 0.2) !important;
+    color: var(--primary-color) !important;
+}
+
+body.light-theme .hero-title-main {
+    color: #0f172a !important;
+}
+
+body.light-theme .social-links-hero a.text-white {
+    color: #475569 !important;
+}
+
+body.light-theme .social-links-hero a.text-white:hover {
+    color: var(--primary-color) !important;
+}
+
+body.light-theme .transition-colors:hover {
+    color: var(--primary-color) !important;
+}
+
+body.light-theme .border-dark {
+    border-color: #cbd5e1 !important;
+}
+
+body.light-theme .feature-card,
+body.light-theme .skill-card,
+body.light-theme .skill-module,
+body.light-theme .challenge-card,
+body.light-theme .timeline-item,
+body.light-theme .bg-dark-1 {
+    border-color: #cbd5e1 !important;
+}
+
+body.light-theme .feature-card {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.light-theme .feature-card:hover {
+    border-color: rgba(15, 118, 110, 0.4) !important;
+}
+
+body.light-theme .project-card {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .project-card:hover {
+    border-color: var(--primary-color) !important;
+}
+
+body.light-theme .tech-pill-sm,
+body.light-theme .tech-pill-modal {
+    background-color: #f1f5f9 !important;
+    color: var(--primary-color) !important;
+}
+
+body.light-theme .skill-pill {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #475569 !important;
+}
+
+body.light-theme .skill-pill:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+body.light-theme .custom-input {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+body.light-theme .custom-input:focus {
+    background-color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(15, 118, 110, 0.15) !important;
+}
+
+body.light-theme label.text-white {
+    color: #334155 !important;
+}
+
+body.light-theme .modal-content {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #1e293b !important;
+}
+
+body.light-theme .modal-header,
+body.light-theme .modal-body {
+    background-color: #ffffff !important;
+}
+
+body.light-theme .btn-close-white {
+    filter: none !important;
+}
+
+body.light-theme .tech-pill-sm.more {
+    color: #475569 !important;
+}
+
+body.light-theme footer,
+body.light-theme .bg-dark-2.py-5 {
+    background-color: #f1f5f9 !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+body.light-theme footer a {
+    color: #475569 !important;
+}
+
+body.light-theme footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+body.light-theme .sub-footer {
+    background-color: #e2e8f0 !important;
+}
+
+body.light-theme .sub-footer p {
+    color: #475569 !important;
+}
+
+body.light-theme .card h6.text-white {
+    color: #475569 !important;
+}
+
+body.light-theme .card h6 {
+    color: #475569 !important;
+}
+
+body.light-theme .timeline::before {
+    background-color: #cbd5e1 !important;
+}
+
+body.light-theme .timeline-dot.border-dark {
+    border-color: #ffffff !important;
+}
+
+body.light-theme .service-card {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+body.light-theme .service-card .icon-box {
+    background-color: #f1f5f9 !important;
+}
+
+body.light-theme .challenge-card {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.light-theme .challenge-card .text-white {
+    color: #0f172a !important;
+}
+
+body.light-theme .modal-content .text-white {
+    color: #0f172a !important;
+}
+
+body.light-theme .modal-content strong {
+    color: #0f172a !important;
+}
+
+body.light-theme .text-info {
+    color: #0284c7 !important;
+}
+
+body.light-theme .text-warning {
+    color: #d97706 !important;
+}
+
+body.light-theme .text-success {
+    color: #16a34a !important;
+}
+
+body.light-theme .skill-module {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .about-img-wrapper::before {
+    background: radial-gradient(circle, rgba(15, 118, 110, 0.15) 0%, rgba(248, 250, 252, 0) 70%) !important;
+}
+
+body.light-theme .view-details-link:hover {
+    color: #14b8a6 !important;
+}
+
+body.light-theme .tech-item {
+    background: rgba(15, 118, 110, 0.03) !important;
+    border-color: rgba(15, 118, 110, 0.1) !important;
+    color: #1e293b !important;
+}
+
+body.light-theme .tech-item:hover {
+    background: rgba(15, 118, 110, 0.08) !important;
+    border-color: rgba(15, 118, 110, 0.3) !important;
+}
