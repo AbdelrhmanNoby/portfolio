@@ -11,25 +11,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeToggleIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-    // Check for saved theme preference, default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-theme');
-        if (themeToggleIcon) {
-            themeToggleIcon.className = 'fas fa-moon fa-lg';
-        }
-    } else {
-        document.body.classList.remove('light-theme');
-        if (themeToggleIcon) {
-            themeToggleIcon.className = 'fas fa-sun fa-lg';
-        }
+    // Default state: Dark mode, so the icon is the sun to switch to light mode
+    if (themeToggleIcon) {
+        themeToggleIcon.className = 'fas fa-sun fa-lg';
     }
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', function () {
             document.body.classList.toggle('light-theme');
             const isLight = document.body.classList.contains('light-theme');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
             if (themeToggleIcon) {
                 themeToggleIcon.className = isLight ? 'fas fa-moon fa-lg' : 'fas fa-sun fa-lg';
             }
